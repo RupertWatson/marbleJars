@@ -1,0 +1,29 @@
+
+@font-face {
+  font-family: 'Rupe-Regular';
+  src: url('Rupe-Regular.ttf') format('truetype');
+  /* Add additional font formats if needed */
+}
+
+body {
+  font-family: 'Rupe-Regular',Arial, sans-serif;
+  line-height: 1.6;
+  text-align: center; /* Center align the text */
+  font-size: 40px; /* Adjust the base font size */
+}
+
+#jar {
+  position: relative;
+  width: 300px;
+  height: 600px;
+  margin: 20px auto;
+}
+
+canvas {
+  border: 2px solid #000;
+}
+
+#marbleImage {
+  image-rendering: pixelated; /* Disable anti-aliasing */
+  image-rendering: crisp-edges; /* Ensure crisp edges */
+}

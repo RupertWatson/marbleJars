@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Marbles in Jars</title>
+  <style>
+    @font-face {
+      font-family: 'Rupe-Regular';
+      src: url('Rupe-Regular.ttf') format('truetype');
+    }
+    body {
+      font-family: 'Rupe-Regular',Arial, sans-serif;
+      font-style: oblique;
+      line-height: 1.6;
+      text-align: center; /* Center align the text */
+      font-size: 50px; /* Adjust the base font size */
+      background-image: url("bg.jpg");
+      background-color: #cccccc;
+    }
+    .jar {
+      display: inline-block;
+      margin: 10px;
+      height: 500px; /* overwritten!*/
+      width:300px;
+    }
+    #jars-container {
+      display: flex;
+      flex-wrap: nowrap;
+      justify-content: center; /* Center items horizontally */
+      gap: 20px;
+    }
+    canvas {
+      display: block;
+      border: 2px solid #363636;
+      background-color: lightcyan;
+    }
+    button { 
+      border: none;
+      font-size: xx-large;
+      font-family: 'Rupe-Regular',Arial, sans-serif;
+      display:inline-block;
+      margin:0 auto;
+      text-align: center;
+      transition-duration: 0.4s;
+      padding: 10px 10px;
+      border-radius: 10px;
+      color: rgb(0, 0, 0);
+      background-color: #93e98a;
+    }
+    .scoreButton {
+      float: left;
+      border-radius: 50%;
+      padding: 10px;
+      width: 48px;
+      margin-right: 10px;
+    }
+    .minusButton {
+      float: left;
+      border-radius: 50%;
+      padding: 10px;
+      width: 48px;
+      margin-right: 10px;
+      background-color: rgb(233, 114, 93);
+    }
+    button:hover {
+      background-color: #64cd5b; /* Green */
+      color: rgb(33, 33, 33);
+    }
+    .minusButton:hover {
+      background-color: #a75340; /* Green */
+      color: rgb(33, 33, 33);
+    }
+    input {
+      font-size: xx-large;
+      text-align: center;
+      background-color: transparent;
+      border: none;
+    }
+    input[type=color]{
+      height: 50px;
+      float: right;
+      
+    }
+    #add-jar-btn {
+      display:block;
+      text-align: center;
+      font-size: 50px;
+      
+    }
+    .TeamName {
+    display: block;
+    margin: 0 auto; /* This will center the input horizontally */
+    width: 100%;
+    font-family: 'Rupe-Regular',Arial, sans-serif;
+
+    }
+  </style>
+  
+</head>
+<body>    
+
+<button id="add-jar-btn" class="add-jar-btn">Add Jar</button>
+
+<div id="jars-container" height="700" width="800">
+</div>
+
+<script src="newscript.js"></script>
+<audio id="addMarbleSound" src="pickupCoin.wav"></audio>
+<audio id="removeMarbleSound" src="hurt.wav"></audio>
+</body>
+</html>
