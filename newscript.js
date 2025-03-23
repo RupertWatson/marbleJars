@@ -45,12 +45,34 @@ function addJar() {
     addMarble(jarMarbles, jarCanvas.getContext('2d'));
   });
 
+  // Create the "Add 5 Marbles" button
+  const add5Button = document.createElement('button');
+  add5Button.textContent = '+5';
+  add5Button.className = "scoreButton";
+
+  add5Button.addEventListener('click', function() {
+    for (let i = 0; i < 5; i++) {
+      addMarble(jarMarbles, jarCanvas.getContext('2d'));
+    }
+  });
+
   // Create the "Remove Marble" button
   const removeButton = document.createElement('button');
   removeButton.textContent = '-1';
   removeButton.className = "minusButton";
   removeButton.addEventListener('click', function() {
     removeMarble(jarMarbles, jarCanvas.getContext('2d'));
+  });
+
+  // Create the "Rmv 5 Marbles" button
+  const remove5Button = document.createElement('button');
+  remove5Button.textContent = '-5';
+  remove5Button.className = "minusButton";
+
+  remove5Button.addEventListener('click', function() {
+    for (let i = 0; i < 5; i++) {
+      removeMarble(jarMarbles, jarCanvas.getContext('2d'));
+    }
   });
 
   // Create the "Remove Jar" button
@@ -73,7 +95,9 @@ function addJar() {
   jarContainer.appendChild(jarDiv);
   jarDiv.appendChild(nameInput);  
   jarDiv.appendChild(addButton);
+  jarDiv.appendChild(add5Button);
   jarDiv.appendChild(removeButton);
+  jarDiv.appendChild(remove5Button);
   jarDiv.appendChild(changeColorButton);
   jarDiv.appendChild(jarCanvas);
   // Append the canvas and buttons to the jar div
@@ -125,7 +149,7 @@ function removeJar(index) {
 // Function to add a marble to a specific jar
 function addMarble(jarMarbles, ctx) {
   playMarbleSound();
-  const radius = 30;
+  const radius = 20;
   const x =  ctx.canvas.width/2;
   const y = 0 + radius;
   const dx = (Math.random() - 0.5) * 5;
